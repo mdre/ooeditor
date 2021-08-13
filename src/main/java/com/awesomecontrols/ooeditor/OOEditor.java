@@ -101,7 +101,7 @@ public class OOEditor extends PolymerTemplate<IOOWrapperModel> implements  HasSi
                     
             LOGGER.log(Level.FINEST, "post command: "+fs.toString(4));
             
-            HttpResponse response = Request.Post("http://172.16.2.88/coauthoring/CommandService.ashx")
+            HttpResponse response = Request.Post(this.commandService.toString())
                     .bodyString(fs.toString(), ContentType.APPLICATION_JSON)
                     .execute().returnResponse();
             
